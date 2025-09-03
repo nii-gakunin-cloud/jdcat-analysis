@@ -1,4 +1,10 @@
 attachments.deleted/**
 testlocal/**
 work/**
+input/**
+output/**
 backup/**
+
+# for Node_js
+node_modules/**
+package-lock.json

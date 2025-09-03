@@ -1,16 +1,18 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+  <head>
     <title>jdcat-analysis : 新しい分析環境を作る（JDCatから）</title>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
   </head>
 
-  <body>
-    <div>
-      <div>
-        <div>
-          <div>
-            <ol>
-              <li>
+  <body class="theme-default aui-theme-default">
+    <div id="page">
+      <div id="main" class="aui-page-panel">
+        <div id="main-header">
+          <div id="breadcrumb-section">
+            <ol id="breadcrumbs">
+              <li class="first">
                 <span><a href="index.html">jdcat-analysis</a></span>
               </li>
               <li>
@@ -18,35 +20,35 @@
               </li>
             </ol>
           </div>
-          <h1>
-            <span>
+          <h1 id="title-heading" class="pagetitle">
+            <span id="title-text">
               jdcat-analysis : 新しい分析環境を作る（JDCatから）
             </span>
           </h1>
         </div>
 
-        <div>
-          <div>
+        <div id="content" class="view">
+          <div class="page-metadata">
           </div>
 
 	  <!--ここから-->
-	  <div>
+	  <div id="main-content" class="wiki-content group">
 	    <p>
               JDCat分析ツールを使うと、
-              <a href="https://jdcat.jsps.go.jp/" rel="nofollow">
+              <a class="external-link" href="https://jdcat.jsps.go.jp/" rel="nofollow">
 		人文学・社会科学総合データカタログ (JDCat)
               </a>
               で公開されているデータを取り込んだ自分専用の分析環境（Jupyter NotebookとRStudioを含むプログラミング環境）をクラウド上に作り、任意の分析プログラムを作成・実行することができます。
 	    </p>
 	    <ol>
-              <li>
+              <li style="list-style-type: none;">
 		<ul>
                   <li>
                     <p>
-                      JDCatで公開されているデータのうち、詳細画面の右端に「オンライン分析」というボタンが表示されているデータはJDCat分析ツールに取り込むことができます。<br>
+                      JDCatで公開されているデータのうち、詳細画面の右端に「オンライン分析」というボタンが表示されているデータはJDCat分析ツールに取り込むことができます。<br/>
                     </p>
                   </li>
-                  <li>JDCat分析ツールを使って新しい分析環境を作るには、JDCatのアイテム画面にある「オンライン分析」ボタンをクリックします。<br>
+                  <li>JDCat分析ツールを使って新しい分析環境を作るには、JDCatのアイテム画面にある「オンライン分析」ボタンをクリックします。<br/>
                     <p>
                       <img draggable="false" width="600" src="https://nii-gakunin-cloud.github.io/jdcat-analysis/attachments/88607728.png" alt="">
                     </p>
@@ -55,16 +57,16 @@
                     <p>
                       「オンライン分析」ボタンをクリックするたびに新しい分析環境が追加で作られていくことに注意してください。→ 
                       <a href="jdcat-env-del.html">分析環境を削除する</a>
-                      <br><br>
+                      <br/><br/>
                     </p>
                   </li>
 		</ul>
               </li>
               <li>
-		注意事項が表示されます。内容に同意される場合、「上記の条件に同意する」にチェックを入れて「次へ」ボタンをクリックします。内容に同意されない場合、JDCat分析ツールをご利用いただけません。<br>
+		注意事項が表示されます。内容に同意される場合、「上記の条件に同意する」にチェックを入れて「次へ」ボタンをクリックします。内容に同意されない場合、JDCat分析ツールをご利用いただけません。<br/>
 		<p>
                   <img draggable="false" width="600" src="https://nii-gakunin-cloud.github.io/jdcat-analysis/attachments/88607730.png" alt="">
-		</p><br>
+		</p><br/>
               </li>
               <li>
 		<p>
@@ -74,7 +76,7 @@
                   <img draggable="false" height="250" src="https://nii-gakunin-cloud.github.io/jdcat-analysis/attachments/130024574.png" alt="">
 		</p>
 		<p>
-                  <br>
+                  <br/>
 		</p>
 		<ul>
                   <li>
@@ -91,7 +93,7 @@
                       <a href="jdcat-orthros-signin.html">
                         Orthrosアカウントの使い方
                       </a>
-                      <br><br>
+                      <br/><br/>
                     </p>
                   </li>
 		</ul>
@@ -106,13 +108,13 @@
 		<ul>
                   <li>
                     <p>→ 
-                      <a href="jdcat-In-case-of-error-jp.html">エラーが発生したときは</a><br>
+                      <a href="jdcat-In-case-of-error-jp.html">エラーが発生したときは</a><br />
                     </p>
                   </li>
 		</ul>
               </li>
               <li>
-		新しい分析環境でJupyter Notebookが起動します。<br>
+		新しい分析環境でJupyter Notebookが起動します。<br/>
 		<p>
                   <img draggable="false" width="600" src="https://nii-gakunin-cloud.github.io/jdcat-analysis/attachments/148052248.png" alt="">
 		</p>
@@ -128,13 +130,13 @@
                   </li>
                   <li>
                     この分析環境を削除したり、ご自身が作った他の分析環境へ切り替えたりするには、メニューから「File」→「Hub Control Panel」をクリックするか、
-                    <a href="https://jupyter.cs.rcos.nii.ac.jp/" rel="nofollow">
+                    <a href="https://jupyter.cs.rcos.nii.ac.jp/" class="external-link" rel="nofollow">
                       https://jupyter.cs.rcos.nii.ac.jp/
                     </a>
                     にアクセスします。
                   </li>
                   <li>
-                    従来の JupyterHub 画面に切り替えるには、URL末尾の「/lab」を「/tree」に書き換えてEnterキーを押します。<br>
+                    従来の JupyterHub 画面に切り替えるには、URL末尾の「/lab」を「/tree」に書き換えてEnterキーを押します。<br/>
                   </li>
 		</ul>
               </li>
@@ -148,7 +150,7 @@
                     一人のユーザーが同時に持てる分析環境は10個までです（2023年10月現在）。この数に達すると、Binderの画面でエラーが発生し、新しい分析環境を作れません。
                   </li>
                   <li>
-                    分析環境を使用せず放置した場合、30日経過後にNIIの管理者が削除させていただきます。<br><br>
+                    分析環境を使用せず放置した場合、30日経過後にNIIの管理者が削除させていただきます。<br/><br/>
                   </li>
 		</ul>
               </li>
@@ -163,13 +165,12 @@
     </div>
       </div>
     </div> 
-    <div role="contentinfo">
-      <section>
+    <div id="footer" role="contentinfo">
+      <section class="footer-body">
         <p>Document generated on 2025/07/24 16:17</p>
-        <div>JDCat</div>
+        <div id="footer-logo">JDCat</div>
       </section>
     </div>
-
-
-
-</body></html>
+</div>
+</body>
+</html>
