@@ -4,6 +4,7 @@ work/**
 input/**
 output/**
 backup/**
+forCMS/**
 
 # for Node_js
 node_modules/**
