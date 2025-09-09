@@ -45,7 +45,7 @@ Meatwiki から JDCat にマニュアルページを移行する
 
         Node.js版
         ```
-        node extract-copy-block.sh
+        node extract-copy-block.sh analysis-env-del.html
         ```
 
 1. WEKO のフォームに抽出した .txt ファイルの内容を貼り付ける
