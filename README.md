@@ -12,9 +12,16 @@ Meatwiki から JDCat にマニュアルページを移行する
     $ git clone https://github.com/nii-gakunin-cloud/jdcat-analysis
     ```
 
-### 通常時
+### WEKO上での作業
+
+* **forCMS/** ディレクトリにある **.txt** ファイルの内容をコピーし、WEKO のフォームに貼り付ける
+
+
+### ページの更新が必要な場合の作業
 
 1. HTML を編集する
+
+    * forCMS/ ディレクトリにある .txt ファイルは可読性に欠けるので、HTML を編集する
 
 1. WEKO のフォームに貼り付ける分だけを抽出し、1行にする
 
@@ -26,36 +33,44 @@ Meatwiki から JDCat にマニュアルページを移行する
 
         1. 抽出コマンドを実行する
 
-            sh版
+            シェルスクリプト版
             ```
             $ ./extract-copy-block.sh
             ```
 
             Node.js版
             ```
-            node extract-copy-block.sh
+            node extract-copy-block.js
             ```
 
     * ファイル名を指定して抽出
 
-        sh版
+        シェルスクリプト版
         ```
         $ ./extract-copy-block.sh analysis-env-del.html
         ```
 
         Node.js版
         ```
-        node extract-copy-block.sh analysis-env-del.html
+        node extract-copy-block.js analysis-env-del.html
         ```
 
 1. WEKO のフォームに抽出した .txt ファイルの内容を貼り付ける
 
-1. 上手く表示されたらリポジトリを更新する  
+1. ページをブラウザで表示させて確認する
 
-    ```
-    $ git commit
-    $ git push
-    ```
+    1. 間違いやレイアウトの崩れなどがある場合は HTML の編集に戻る
+
+    1. 正しく表示されたらリポジトリを更新する  
+
+        ```
+        $ git commit
+        $ git push
+        ```
+
+---
+
+## 通常の作業者はここまで読めば十分です。
 
 ### 相対パスでテストしたい時（非推奨）
 
@@ -90,18 +105,21 @@ Meatwiki から JDCat にマニュアルページを移行する
 
 ### 編集者が使うファイル
 
-* attatchments/\*
-    * 画像。ここのファイルを JDCat ページの HTML img タグの中にスタティックな URL で指定する
-* \*.html
-    * 説明書のHTMLソース。&lt;!-- ここから --&gt; から &lt;!-- ここまで --&gt; をコピーし、 WEKO のフォームに貼り付ける
 * forCMS/\*
-    * WEKO のフォームに貼り付ける内容を抽出したテキストファイル  
-    上記 HTML の&lt;!-- ここから --&gt; の次の行から &lt;!-- ここまで --&gt; の前の行を抽出して1行にしたもの。
-
+    * WEKO のフォームに貼り付ける内容を抽出して1行にしたテキストファイル  
+    HTML の&lt;!-- ここから --&gt; の次の行から &lt;!-- ここまで --&gt; の前の行を抽出して1行にしたもの
+* \*.html
+    * 説明書のHTMLソース。&lt;!-- ここから --&gt; から &lt;!-- ここまで --&gt; までが編集対象
+* attatchments/\*
+    * 画像。ここのファイルを JDCat ページの HTML img タグの中に FQDN も含めた URL で指定する
+* extract-copy-block.sh
+    * 編集用の HTML から WEKO のフォームに貼り付ける部分を抽出し、1行の文字列にするスクリプト
+* extract-copy-block.js
+    * Linux 以外の環境のために作った extract-copy-block.sh の Node.js 版
 
 ### リポジトリ作成作業において作られたファイル
 
-記録として残しておく
+もう必要ないが記録として残しておく
 
 * from_meatwiki/
     * MeatWiki から生成したページ群
@@ -111,7 +129,7 @@ Meatwiki から JDCat にマニュアルページを移行する
     * 画像の URL をローカルにするスクリプト
 
 * absolute_url.sh
-    * 画像の URL を FQDN からの絶対パスにするスクリプト
+    * 画像の URL を FQDN も含めた絶対パスにするスクリプト
 
 * clean_meatwiki.js
 
@@ -159,7 +177,7 @@ Meatwiki から JDCat にマニュアルページを移行する
         1. 確認して問題がなければ、output/ の中の HTML をリポジトリの HTML にコピーする
 
 * plainify.js, plainify.sh, urls.txt
-    * JDCat のページのソースが開発ツールを見ないと何が書いてあるかわからない作りになっていたので、URLを入力して可読性のある HTML として保存するスクリプト
+    * JDCat のページのソースが開発ツール（ChromeではF12キー）を見ないと何が書いてあるかわからない作りになっていたので、URLを入力して可読性のある HTML として保存するスクリプト
     * 使い方
         1. urls.txt に、HTML に変換して保存したいページの URL を列挙
         1. node-fetch がインストールされていなければ npm でインストールする

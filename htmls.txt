@@ -9,4 +9,3 @@ analysis-orthros-signup.html
 analysis-overview.html
 analysis-precautions-en.html
 analysis-precautions-jp.html
-index.html
